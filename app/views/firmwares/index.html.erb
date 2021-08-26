@@ -1,0 +1,9 @@
+<h1>Firmwares</h1>
+<%= link_to "New Firmware", new_firmware_path %>
+<ul>
+  <% @firmwares.each do |firmware| %>
+    <li>
+      <%= firmware.file.filename %> (<%=number_to_human_size(firmware.file.byte_size)%>) (<%= link_to "Download", firmware_download_path(firmware) %>) (<%= link_to "Delete", firmware_delete_path(firmware) %>)
+    </li>
+  <% end %>
+</ul>

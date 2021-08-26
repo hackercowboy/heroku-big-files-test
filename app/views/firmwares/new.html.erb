@@ -1,0 +1,10 @@
+<h1>New Firmware</h1>
+
+<%= form_with model: @firmware, local: true do |form| %>
+
+  <%= form.file_field :file %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
