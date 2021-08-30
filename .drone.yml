@@ -1,0 +1,26 @@
+---
+kind: pipeline
+name: default
+
+steps:
+- name: production
+  image: hackercowboy/dind
+  volumes:
+  - name: dockersock
+    path: /var/run/docker.sock
+  - name: appl
+    path: /appl
+  commands:
+  - docker build -t heroku-big-files-test .
+  - cd /appl;docker-compose up -d
+  when:
+    branch:
+    - master
+
+volumes:
+- name: dockersock
+  host:
+    path: /var/run/docker.sock
+- name: appl
+  host:
+    path: /appl
