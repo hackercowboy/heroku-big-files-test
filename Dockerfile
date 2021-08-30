@@ -39,4 +39,4 @@ RUN apk add --no-cache bash shared-mime-info tzdata postgresql-dev nodejs yarn i
 
 COPY --from=build /app /app
 
-CMD ["rails", "server", "-b", "0.0.0.0"]
+CMD ["bash", "start.sh"]
