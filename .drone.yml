@@ -15,7 +15,7 @@ steps:
   - cd /appl;docker-compose up -d
   when:
     branch:
-    - master
+    - main
 
 volumes:
 - name: dockersock
