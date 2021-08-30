@@ -8,7 +8,7 @@ ENV BUNDLE_DEPLOYMENT 1
 ENV PATH /app/vendor/bundle/bin:$PATH
 ENV RAILS_ENV production
 
-RUN apk add --no-cache bash build-base cmake git openssl-dev postgresql-dev shared-mime-info tzdata nodejs
+RUN apk add --no-cache bash build-base cmake git openssl-dev postgresql-dev shared-mime-info tzdata nodejs yarn
 
 RUN mkdir /app
 WORKDIR /app
@@ -35,7 +35,7 @@ ENV BUNDLE_DEPLOYMENT 1
 ENV PATH /app/vendor/bundle/bin:$PATH
 ENV RAILS_ENV production
 
-RUN apk add --no-cache bash shared-mime-info tzdata postgresql-dev nodejs imagemagick
+RUN apk add --no-cache bash shared-mime-info tzdata postgresql-dev nodejs yarn imagemagick
 
 COPY --from=build /app /app
 
