@@ -1,4 +1,4 @@
-FROM ruby:2.7.2-alpine as build
+FROM ruby:3.0.1-alpine as build
 
 ENV NODE_VERSION 12.22.0
 ENV YARN_VERSION 1.22.5
