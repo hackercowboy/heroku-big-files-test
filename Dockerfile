@@ -39,4 +39,4 @@ RUN apk add --no-cache bash shared-mime-info tzdata postgresql-dev nodejs yarn i
 
 COPY --from=build /app /app
 
-CMD ["bash", "start.sh"]
+CMD ["bash", "/app/start.sh"]
