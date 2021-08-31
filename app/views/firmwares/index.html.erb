@@ -6,7 +6,7 @@
       <%= firmware.file.filename %>&nbsp;
       (<%=number_to_human_size(firmware.file.byte_size)%>)&nbsp;
       (<%= link_to "Download", firmware_download_path(firmware) %>)&nbsp;
-      (<%= link_to "Direct Download", rails_blob_url(firmware.file) %>)&nbsp;
+      (<%= link_to "Direct Download", firmware.file.url %>)&nbsp;
       (<%= link_to "Delete", firmware_delete_path(firmware) %>)
     </li>
   <% end %>
